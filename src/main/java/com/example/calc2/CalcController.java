@@ -1,9 +1,7 @@
 package com.example.calc2;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -48,8 +46,8 @@ public class CalcController {
     }
 
     @PostMapping("/div")
-    public CalcResponse div(@RequestBody CalcRequest calcRequest){
-        return new CalcResponse(calcService.div(calcRequest.getA(), calcRequest.getB()));
+    public ResponseEntity<CalcResponse> div(@RequestBody CalcRequest calcRequest){
+        return calcService.div(calcRequest.getA(), calcRequest.getB());
     }
 
    @GetMapping("/history")
@@ -57,4 +55,8 @@ public class CalcController {
         return calcService.History();
     }
 
+    @DeleteMapping("/history")
+    public List<CalcOp> deletehistory(){
+        return calcService.deleteHistory();
+    }
 }

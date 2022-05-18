@@ -20,10 +20,5 @@ public class CalcResponse {
     public CalcResponse(double result){
         this.result = result;
     }
-
-    public double getResult(){return result = result;}
-
-    public void setResult(int result){this.result = result;}
-
 }
 

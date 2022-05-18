@@ -7,7 +7,7 @@ public class CalcResponseInt {
         this.result = result;
     }
 
-    public int getResult(){return result = result;}
+    //public int getResult(){return result = result;}
 
     public void setResult(int result){this.result = result;}
 
